@@ -23,3 +23,5 @@ jobs:
           git checkout prod
           git merge --no-ff --allow-unrelated-histories dev
           git push
+env:
+    GH_TOKEN: ${{ secrets.ADVENTURE_TOKEN }}
