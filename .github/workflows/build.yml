@@ -14,7 +14,6 @@ jobs:
         with:
           submodules: true
 
-
       - name: Merge to prod branch
         run: |
           git config user.name "GitHub Actions"
@@ -23,5 +22,5 @@ jobs:
           git checkout prod
           git merge --no-ff --allow-unrelated-histories dev
           git push https://${GH_TOKEN}@github.com/Rasmus2103/AdventureXP-frontend.git prod
-env:
-    GH_TOKEN: ${{ secrets.ADVENTURE_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.ADVENTURE_TOKEN }}
