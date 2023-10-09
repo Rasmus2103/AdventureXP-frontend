@@ -5,7 +5,7 @@ import "./navigo_EditedByLars.js"  //Will create the global Navigo, with a few c
 import {
   setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
-import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js"
+import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
@@ -26,22 +26,17 @@ import { initEditReservation } from "./pages/reservation/editreservation/editres
 import { initGetReservation } from "./pages/reservation/getreservation/getreservation.js"
 import { initGetAllReservations } from "./pages/reservation/getallreservations/getallreservations.js"
 
-import { initAddShift } from "./pages/shift/addshift/addshift.js"
-import { initDeleteShift } from "./pages/shift/deleteshift/deleteshift.js"
-import { initEditShift } from "./pages/shift/editshift/editshift.js"
-import { initGetShift } from "./pages/shift/getshift/getshift.js"
-import { initGetAllShifts } from "./pages/shift/getallshifts/getallshifts.js"
+import { initAddShift } from "./pages/Shift/addshift/addshift.js"
+import { initDeleteShift } from "./pages/Shift/deleteshift/deleteshift.js"
+import { initEditShift } from "./pages/Shift/editshift/editshift.js"
+import { initGetShift } from "./pages/Shift/getshift/getshift.js"
+import { initGetAllShifts } from "./pages/Shift/getallshifts/getallshifts.js"
 
 window.addEventListener("load", async () => {
 
   //const templateCars = await loadHtml("./pages/cars/cars.html")
-  const templateMembers = await loadHtml("./pages/members/members.html")
-  const templateAddCar = await loadHtml("./pages/addCar/addCar.html")
   const templateSignup = await loadHtml("./pages/signup/signup.html")
   const templateLogin = await loadHtml("./pages/login/login.html")
-  const templateFindEditCar = await loadHtml("./pages/findEditCar/findEditCar.html")
-  const templateReserve = await loadHtml("./pages/reservation/reserve.html")
-  const templateReservations = await loadHtml("./pages/showReservations/reservations.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
 
   const templateCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
@@ -82,30 +77,31 @@ window.addEventListener("load", async () => {
           Car's 'R' Us - Created, as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
         </p>
      `,
-     "/all-customer": () => {
+     "/all-customers": () => {
+      console.log("yyyyyyyyyyyyyyy")
         renderHtml(templateCustomer, "content")
         initCustomers()
       },
-      "/find-edit-car": () => {
-        renderHtml(templateFindEditCar, "content")
-        initFindEditCar()
-      },
-      "/add-car": () => {
-        renderHtml(templateAddCar, "content")
-        initAddCar()
-      },
-      "/members": () => {
-        renderHtml(templateMembers, "content")
-        initMembers()
-      },
-      "/reserve-car": () => {
-        renderHtml(templateReserve, "content")
-        initReservation()
-      },
-      "/reservations": () => {
-        renderHtml(templateReservations, "content")
-        initListReservationsAll()
-      },
+      // "/find-edit-car": () => {
+      //   renderHtml(templateFindEditCar, "content")
+      //   initFindEditCar()
+      // },
+      // "/add-car": () => {
+      //   renderHtml(templateAddCar, "content")
+      //   initAddCar()
+      // },
+      // "/members": () => {
+      //   renderHtml(templateMembers, "content")
+      //   initMembers()
+      // },
+      // "/reserve-car": () => {
+      //   renderHtml(templateReserve, "content")
+      //   initReservation()
+      // },
+      // "/reservations": () => {
+      //   renderHtml(templateReservations, "content")
+      //   initListReservationsAll()
+      // },
       "/signup": () => {
         renderHtml(templateSignup, "content")
         initSignup()
