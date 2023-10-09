@@ -5,18 +5,13 @@ import "./navigo_EditedByLars.js"  //Will create the global Navigo, with a few c
 import {
   setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
-import { initReservation } from "./pages/reservation/reserve.js"
-import { initMembers } from "./pages/members/members.js"
-import { initCars } from "./pages/cars/cars.js"
-import { initAddCar } from "./pages/addCar/addCar.js"
+import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js"
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
-import { initFindEditCar } from "./pages/findEditCar/findEditCar.js"
-import { initListReservationsAll } from "./pages/showReservations/reservations.js"
 
 window.addEventListener("load", async () => {
 
-  const templateCars = await loadHtml("./pages/cars/cars.html")
+  //const templateCars = await loadHtml("./pages/cars/cars.html")
   const templateMembers = await loadHtml("./pages/members/members.html")
   const templateAddCar = await loadHtml("./pages/addCar/addCar.html")
   const templateSignup = await loadHtml("./pages/signup/signup.html")
@@ -25,6 +20,8 @@ window.addEventListener("load", async () => {
   const templateReserve = await loadHtml("./pages/reservation/reserve.html")
   const templateReservations = await loadHtml("./pages/showReservations/reservations.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
+
+  const templateCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
 
   //If token existed, for example after a refresh, set UI accordingly
   const token = localStorage.getItem("token")
@@ -50,9 +47,9 @@ window.addEventListener("load", async () => {
           Car's 'R' Us - Created, as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
         </p>
      `,
-      "/cars": () => {
-        renderHtml(templateCars, "content")
-        initCars()
+     "/all-customer": () => {
+        renderHtml(templateCustomer, "content")
+        initCustomers()
       },
       "/find-edit-car": () => {
         renderHtml(templateFindEditCar, "content")
