@@ -46,6 +46,18 @@ window.addEventListener("load", async () => {
 
   const templateCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
 
+  const templateAddActivity = await loadHtml("./pages/activity/addactivity/addactivity.html")
+  const templateDeleteActivity = await loadHtml("./pages/activity/deleteactivity/deleteactivity.html")
+  const templateEditActivity = await loadHtml("./pages/activity/editactivity/editactivity.html")
+  const templateGetActivity = await loadHtml("./pages/activity/getactivity/getactivity.html")
+  const templateGetAllActivity = await loadHtml("./pages/activity/getallactivity/getallactivity.html")
+
+  const templateAddArrangement = await loadHtml("./pages/arrangement/addarrangement/addarrangement.html")
+  const templateDeleteArrangement = await loadHtml("./pages/arrangement/deletearrangement/deletearrangement.html")
+  const templateEditArrangement = await loadHtml("./pages/arrangement/editarrangement/editarrangement.html")
+  const templateGetArrangement = await loadHtml("./pages/arrangement/getarrangement/getarrangement.html")
+  const templateGetAllArrangements = await loadHtml("./pages/arrangement/getallarrangements/getallarrangements.html")
+
   //If token existed, for example after a refresh, set UI accordingly
   const token = localStorage.getItem("token")
   toggleLoginStatus(token)
