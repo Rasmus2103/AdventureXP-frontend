@@ -14,6 +14,20 @@ import { initSignup } from "./pages/signup/signup.js"
 import { initFindEditCar } from "./pages/findEditCar/findEditCar.js"
 import { initListReservationsAll } from "./pages/showReservations/reservations.js"
 
+import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
+import { initDeleteActivity } from "./pages/activity/deleteactivity/deleteactivity.js"
+import { initEditActivity } from "./pages/activity/editactivity/editactivity.js"
+import { initGetActivity } from "./pages/activity/getactivity/getactivity.js"
+import { initGetAllActivity } from "./pages/activity/getallactivity/getallactivity.js"
+
+import { initAddArrangement } from "./pages/arrangement/addarrangement/addarrangement.js"
+import { initDeleteArrangement } from "./pages/arrangement/deletearrangement/deletearrangement.js"
+import { initEditArrangement } from "./pages/arrangement/editarrangement/editarrangement.js"
+import { initGetArrangement } from "./pages/arrangement/getarrangement/getarrangement.js"
+import { initGetAllArrangement } from "./pages/arrangement/getallarrangement/getallarrangement.js"
+
+
+
 window.addEventListener("load", async () => {
 
   const templateCars = await loadHtml("./pages/cars/cars.html")
