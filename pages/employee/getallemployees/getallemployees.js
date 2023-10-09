@@ -2,7 +2,7 @@ import { API_URL } from "../../../settings.js"
 const URL = API_URL + "/employee"
 import {sanitizeStringWithTableRows, handleHttpErrors} from "../../../utils.js"
 
-export async function initAllEmployee() {
+export async function initGetAllEmployees() {
     const employees = await fetch(URL).then(res => res.json())
 
     const tableRows = employees.map(employee => 

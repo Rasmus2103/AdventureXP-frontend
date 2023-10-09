@@ -4,8 +4,6 @@ import "./navigo_EditedByLars.js"  //Will create the global Navigo, with a few c
 
 import {setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
-import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
-import { setActiveLink, loadHtml, renderHtml} from "./utils.js"
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 
@@ -114,13 +112,10 @@ window.addEventListener("load", async () => {
      `,
      //Customer
      "/all-customers": () => {
-        renderHtml(templateCustomer, "content")
-        initCustomers()
-      },
         renderHtml(templateGetAllCustomer, "content")
         initCustomers()
       },
-      "add-customer": () => {
+      "/add-customer": () => {
         renderHtml(templateAddCustomer, "content")
         initAddCustomer()
       },
@@ -195,7 +190,7 @@ window.addEventListener("load", async () => {
         renderHtml(templateGetEmployee, "content")
         initGetEmployee()
       },
-      "get-all-employees": () => {
+      "/get-all-employees": () => {
         renderHtml(templateGetAllEmployees, "content")
         initGetAllEmployees()
       },
@@ -242,7 +237,6 @@ window.addEventListener("load", async () => {
         initGetAllShifts()
       },
       //Login/Logout and signup
->>>>>>> 7b2fb5564426f8967372080a2320718ec7e30fbf
       "/signup": () => {
         renderHtml(templateSignup, "content")
         initSignup()
