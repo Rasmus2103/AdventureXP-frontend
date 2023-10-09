@@ -3,7 +3,6 @@ const URL = API_URL + "/customer"
 import {sanitizeStringWithTableRows, handleHttpErrors} from "../../../utils.js"
 
 export async function initCustomers() {
-    console.log("xxxxxxxxxxxxxxxx")
     const customers = await fetch(URL).then(res => res.json())
 
     const tableRows = customers.map(customer => 

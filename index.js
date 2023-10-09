@@ -2,12 +2,22 @@
 import "./navigo_EditedByLars.js"  //Will create the global Navigo, with a few changes, object used below
 //import "./navigo.min.js"  //Will create the global Navigo object used below
 
-import {
-  setActiveLink, loadHtml, renderHtml} from "./utils.js"
-
-import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
+import { setActiveLink, loadHtml, renderHtml} from "./utils.js"
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
+
+import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
+import { initAddCustomer } from "./pages/customer/addcustomer/addcustomer.js"
+import { initDeleteCustomer } from "./pages/customer/deletecustomer/deletecustomer.js"
+import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
+import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
+
+import { initAddEmployee } from "./pages/employee/addemployee/addemployee.js"
+import { initDeleteEmployee } from "./pages/employee/deleteemployee/deleteemployee.js"
+import { initEditEmployee } from "./pages/employee/editemployee/editemployee.js"
+import { initGetEmployee } from "./pages/employee/getemployee/getemployee.js"
+import { initGetAllEmployees } from "./pages/employee/getallemployees/getallemployees.js"
+
 import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
 import { initDeleteActivity } from "./pages/activity/deleteactivity/deleteactivity.js"
 import { initEditActivity } from "./pages/activity/editactivity/editactivity.js"
@@ -39,7 +49,29 @@ window.addEventListener("load", async () => {
   const templateLogin = await loadHtml("./pages/login/login.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
 
-  const templateCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
+  const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
+  const templateAddCustomer = await loadHtml("./pages/customer/addcustomer/addcustomer.html")
+  const templateDeleteCustomer = await loadHtml("./pages/customer/deletecustomer/deletecustomer.html")
+  const templateEditCustomer = await loadHtml("./pages/customer/editcustomer/editcustomer.html")
+  const templateGetCustomer = await loadHtml("./pages/customer/getcustomer/getcustomer.html")
+
+  const templateAddEmployee = await loadHtml("./pages/employee/addemployee/addemployee.html")
+  const templateDeleteEmployee = await loadHtml("./pages/employee/deleteemployee/deleteemployee.html")
+  const templateEditEmployee = await loadHtml("./pages/employee/editemployee/editemployee.html")
+  const templateGetEmployee = await loadHtml("./pages/employee/getemployee/getemployee.html")
+  const templateGetAllEmployees = await loadHtml("./pages/employee/getallemployees/getallemployees.html")
+
+  const templateAddReservation = await loadHtml("./pages/reservation/addreservation/addreservation.html")
+  const templateDeleteReservation = await loadHtml("./pages/reservation/deletereservation/deletereservation.html")
+  const templateEditReservation = await loadHtml("./pages/reservation/editreservation/editreservation.html")
+  const templateGetReservation = await loadHtml("./pages/reservation/getreservation/getreservation.html")
+  const templateGetAllReservations = await loadHtml("./pages/reservation/getallreservations/getallreservations.html")
+
+  const templateAddShift = await loadHtml("./pages/Shift/addshift/addshift.html")
+  const templateDeleteShift = await loadHtml("./pages/Shift/deleteshift/deleteshift.html")
+  const templateEditShift = await loadHtml("./pages/Shift/editshift/editshift.html")
+  const templateGetShift = await loadHtml("./pages/Shift/getshift/getshift.html")
+  const templateGetAllShifts = await loadHtml("./pages/Shift/getallshifts/getallshifts.html")
 
   const templateAddActivity = await loadHtml("./pages/activity/addactivity/addactivity.html")
   const templateDeleteActivity = await loadHtml("./pages/activity/deleteactivity/deleteactivity.html")
@@ -77,31 +109,133 @@ window.addEventListener("load", async () => {
           Car's 'R' Us - Created, as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
         </p>
      `,
+     //Customer
      "/all-customers": () => {
-      console.log("yyyyyyyyyyyyyyy")
-        renderHtml(templateCustomer, "content")
+        renderHtml(templateGetAllCustomer, "content")
         initCustomers()
       },
-      // "/find-edit-car": () => {
-      //   renderHtml(templateFindEditCar, "content")
-      //   initFindEditCar()
-      // },
-      // "/add-car": () => {
-      //   renderHtml(templateAddCar, "content")
-      //   initAddCar()
-      // },
-      // "/members": () => {
-      //   renderHtml(templateMembers, "content")
-      //   initMembers()
-      // },
-      // "/reserve-car": () => {
-      //   renderHtml(templateReserve, "content")
-      //   initReservation()
-      // },
-      // "/reservations": () => {
-      //   renderHtml(templateReservations, "content")
-      //   initListReservationsAll()
-      // },
+      "add-customer": () => {
+        renderHtml(templateAddCustomer, "content")
+        initAddCustomer()
+      },
+      "/delete-customer": () => {
+        renderHtml(templateDeleteCustomer, "content")
+        initDeleteCustomer()
+      },
+      "/edit-customer": () => {
+        renderHtml(templateEditCustomer, "content")
+        initEditCustomer()
+      },
+      "/get-customer": () => {
+        renderHtml(templateGetCustomer, "content")
+        initGetCustomer()
+      },
+      //Activity
+      "/add-activity": () => {
+        renderHtml(templateAddActivity, "content")
+        initAddActivity()
+      },
+      "/delete-activity": () => {
+        renderHtml(templateDeleteActivity, "content")
+        initDeleteActivity()
+      },
+      "/edit-activity": () => {
+        renderHtml(templateEditActivity, "content")
+        initEditActivity()
+      },
+      "/get-activity": () => {
+        renderHtml(templateGetActivity, "content")
+        initGetActivity()
+      },
+      "/get-all-activity": () => {
+        renderHtml(templateGetAllActivity, "content")
+        initGetAllActivity()
+      },
+      //Arrangement
+      "/add-arrangement": () => {
+        renderHtml( templateAddArrangement, "content")
+        initAddArrangement()
+      },
+      "/delete-arrangement": () => {
+        renderHtml(templateDeleteArrangement, "content")
+        initDeleteArrangement()
+      },
+      "/edit-arrangement": () => {
+        renderHtml(templateEditArrangement, "content")
+        initEditArrangement()
+      },
+      "/get-arrangement": () => {
+        renderHtml(templateGetArrangement, "content")
+        initGetArrangement()
+      },
+      "/get-all-arrangements": () => {
+        renderHtml(templateGetAllArrangements, "content")
+        initGetAllArrangements()
+      },
+      //Employee
+      "/add-employee": () => {
+        renderHtml(templateAddEmployee, "content")
+        initAddEmployee()
+      },
+      "/delete-employee": () => {
+        renderHtml(templateDeleteEmployee, "content")
+        initDeleteEmployee()
+      },
+      "/edit-employee": () => {
+        renderHtml(templateEditEmployee, "content")
+        initEditEmployee()
+      },
+      "/get-employee": () => {
+        renderHtml(templateGetEmployee, "content")
+        initGetEmployee()
+      },
+      "get-all-employees": () => {
+        renderHtml(templateGetAllEmployees, "content")
+        initGetAllEmployees()
+      },
+      //Reservation
+      "/add-reservation": () => {
+        renderHtml(templateAddReservation, "content")
+        initAddReservation()
+      },
+      "/delete-reservation": () => {
+        renderHtml(templateDeleteReservation, "content")
+        initDeleteReservation()
+      },
+      "/edit-reservation": () => {
+        renderHtml(templateEditReservation, "content")
+        initEditReservation()
+      },
+      "/get-reservation": () => {
+        renderHtml(templateGetReservation, "content")
+        initGetReservation()
+      },
+      "/get-all-reservations": () => {
+        renderHtml(templateGetAllReservations, "content")
+        initGetAllReservations()
+      },  
+      //Shift
+      "/add-shift": () => {
+        renderHtml(templateAddShift, "content")
+        initAddShift()
+      },
+      "/delete-shift": () => {
+        renderHtml(templateDeleteShift, "content")
+        initDeleteShift()
+      },
+      "edit-shift": () => {
+        renderHtml(templateEditShift, "content")
+        initEditShift()
+      },
+      "/get-shift": () => {
+        renderHtml(templateGetShift, "content")
+        initGetShift()
+      },
+      "/get-all-shifts": () => {
+        renderHtml(templateGetAllShifts, "content")
+        initGetAllShifts()
+      },
+      //Login/Logout and signup
       "/signup": () => {
         renderHtml(templateSignup, "content")
         initSignup()
