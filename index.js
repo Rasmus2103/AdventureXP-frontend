@@ -8,6 +8,29 @@ import {
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js"
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
+import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
+import { initDeleteActivity } from "./pages/activity/deleteactivity/deleteactivity.js"
+import { initEditActivity } from "./pages/activity/editactivity/editactivity.js"
+import { initGetActivity } from "./pages/activity/getactivity/getactivity.js"
+import { initGetAllActivity } from "./pages/activity/getallactivity/getallactivity.js"
+
+import { initAddArrangement } from "./pages/arrangement/addarrangement/addarrangement.js"
+import { initDeleteArrangement } from "./pages/arrangement/deletearrangement/deletearrangement.js"
+import { initEditArrangement } from "./pages/arrangement/editarrangement/editarrangement.js"
+import { initGetArrangement } from "./pages/arrangement/getarrangement/getarrangement.js"
+import { initGetAllArrangements } from "./pages/arrangement/getallarrangements/getallarrangements.js"
+
+import { initAddReservation } from "./pages/reservation/addreservation/addreservation.js"
+import { initDeleteReservation } from "./pages/reservation/deletereservation/deletereservation.js"
+import { initEditReservation } from "./pages/reservation/editreservation/editreservation.js"
+import { initGetReservation } from "./pages/reservation/getreservation/getreservation.js"
+import { initGetAllReservations } from "./pages/reservation/getallreservations/getallreservations.js"
+
+import { initAddShift } from "./pages/shift/addshift/addshift.js"
+import { initDeleteShift } from "./pages/shift/deleteshift/deleteshift.js"
+import { initEditShift } from "./pages/shift/editshift/editshift.js"
+import { initGetShift } from "./pages/shift/getshift/getshift.js"
+import { initGetAllShifts } from "./pages/shift/getallshifts/getallshifts.js"
 
 window.addEventListener("load", async () => {
 
