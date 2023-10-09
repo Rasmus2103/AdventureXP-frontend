@@ -2,15 +2,10 @@
 import "./navigo_EditedByLars.js"  //Will create the global Navigo, with a few changes, object used below
 //import "./navigo.min.js"  //Will create the global Navigo object used below
 
-<<<<<<< HEAD
-import {
-  setActiveLink, loadHtml, renderHtml} from "./utils.js"
+import {setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
-
-=======
 import { setActiveLink, loadHtml, renderHtml} from "./utils.js"
->>>>>>> 7b2fb5564426f8967372080a2320718ec7e30fbf
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 
@@ -119,11 +114,9 @@ window.addEventListener("load", async () => {
      `,
      //Customer
      "/all-customers": () => {
-<<<<<<< HEAD
         renderHtml(templateCustomer, "content")
         initCustomers()
       },
-=======
         renderHtml(templateGetAllCustomer, "content")
         initCustomers()
       },
