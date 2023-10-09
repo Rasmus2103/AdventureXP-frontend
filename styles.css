@@ -1,0 +1,22 @@
+
+/*
+
+Styles used for labels and input fields in boot strap columns
+
+*/
+
+.row label {
+    margin-top: 1.5em;
+    vertical-align: middle;
+    text-align: right;
+  }
+  
+  .row input {
+    margin-top: 1em;
+    padding: 0.35em;
+    border-radius: 4px;
+    width:100%;
+    border: 1px solid lightgray;
+  }
+  
+  
