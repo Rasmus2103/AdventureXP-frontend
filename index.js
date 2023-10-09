@@ -6,6 +6,7 @@ import {
   setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
+
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
@@ -66,30 +67,9 @@ window.addEventListener("load", async () => {
         </p>
      `,
      "/all-customers": () => {
-      console.log("yyyyyyyyyyyyyyy")
         renderHtml(templateCustomer, "content")
         initCustomers()
       },
-      // "/find-edit-car": () => {
-      //   renderHtml(templateFindEditCar, "content")
-      //   initFindEditCar()
-      // },
-      // "/add-car": () => {
-      //   renderHtml(templateAddCar, "content")
-      //   initAddCar()
-      // },
-      // "/members": () => {
-      //   renderHtml(templateMembers, "content")
-      //   initMembers()
-      // },
-      // "/reserve-car": () => {
-      //   renderHtml(templateReserve, "content")
-      //   initReservation()
-      // },
-      // "/reservations": () => {
-      //   renderHtml(templateReservations, "content")
-      //   initListReservationsAll()
-      // },
       "/signup": () => {
         renderHtml(templateSignup, "content")
         initSignup()

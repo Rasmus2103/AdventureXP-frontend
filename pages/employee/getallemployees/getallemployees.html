@@ -1,11 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="template">
+    <style>
+      row.div,
+      span {
+        font-weight: bold;
+      }
+    </style>
+  
+    <div>
+      <h3>All Employees</h3>
+      <table class="table" style="max-width:1000px;">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Phonenumber</th>
+            <th>Address</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody id="tbl-body">
+        </tbody>
+      </table>
+      <p id="error" style="color:red"></p>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="member-details-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="member-content"></div>
+            <div class="row">
+              <div class="col-md-3"><span>Username:</span></div>
+              <div class="col-md-9">
+                <p id="user-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>E-mail:</span></div>
+              <div class="col-md-9">
+                <p id="email"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>First name:</span></div>
+              <div class="col-md-9">
+                <p id="first-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Last name:</span></div>
+              <div class="col-md-9">
+                <p id="last-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>PhoneNumber:</span></div>
+              <div class="col-md-9">
+                <p id="phonenumber"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Address:</span></div>
+              <div class="col-md-9">
+                <p id="address"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Created:</span></div>
+              <div class="col-md-9">
+                <p id="created"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Edited:</span></div>
+              <div class="col-md-9">
+                <p id="edited"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
