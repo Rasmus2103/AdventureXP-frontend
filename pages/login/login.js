@@ -50,8 +50,8 @@ function storeLoginDetails(res) {
   
   export function toggleLoginStatus(loggedIn) {
     //Hide or show all menu-links depending on login status
-    document.getElementById("login-container").style.display = loggedIn ? "none" : "block"
-    document.getElementById("logout-container").style.display = loggedIn ? "block" : "none"
+    //document.getElementById("login-container").style.display = loggedIn ? "none" : "block"
+    //document.getElementById("logout-container").style.display = loggedIn ? "block" : "none"
     
     const adminListItems = document.querySelectorAll('.admin-only');
     const userRoutes = document.querySelector('.user-only');
@@ -62,9 +62,9 @@ function storeLoginDetails(res) {
        isUser = localStorage.getItem('roles').includes('USER');
     }
     for (var i = 0; i < adminListItems.length; i++) {
-      adminListItems[i].style.display = isAdmin ? "block" : 'none'; // or any other value you want
+      //adminListItems[i].style.display = isAdmin ? "block" : 'none'; // or any other value you want
     }
-    userRoutes.style.display = isUser ? 'block' : 'none';
+    //userRoutes.style.display = isUser ? 'block' : 'none';
     
   }
   

@@ -18,7 +18,7 @@ import { initAddArrangement } from "./pages/arrangement/addarrangement/addarrang
 import { initDeleteArrangement } from "./pages/arrangement/deletearrangement/deletearrangement.js"
 import { initEditArrangement } from "./pages/arrangement/editarrangement/editarrangement.js"
 import { initGetArrangement } from "./pages/arrangement/getarrangement/getarrangement.js"
-import { initGetAllArrangement } from "./pages/arrangement/getallarrangements/getallarrangements.js"
+import { initGetAllArrangements } from "./pages/arrangement/getallarrangements/getallarrangements.js"
 
 import { initAddReservation } from "./pages/reservation/addreservation/addreservation.js"
 import { initDeleteReservation } from "./pages/reservation/deletereservation/deletereservation.js"
