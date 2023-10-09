@@ -8,7 +8,7 @@ import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
-import { initAddCustomer } from "./pages/customer/addcustomer/addcustomer.js"
+import { initAddCustomer } from "./pages/customer/addcustomer/addCustomer.js"
 import { initDeleteCustomer } from "./pages/customer/deletecustomer/deletecustomer.js"
 import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
 import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
@@ -44,14 +44,12 @@ import { initGetShift } from "./pages/Shift/getshift/getshift.js"
 import { initGetAllShifts } from "./pages/Shift/getallshifts/getallshifts.js"
 
 window.addEventListener("load", async () => {
-
-  //const templateCars = await loadHtml("./pages/cars/cars.html")
   const templateSignup = await loadHtml("./pages/signup/signup.html")
   const templateLogin = await loadHtml("./pages/login/login.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
 
   const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
-  const templateAddCustomer = await loadHtml("./pages/customer/addcustomer/addcustomer.html")
+  const templateAddCustomer = await loadHtml("./pages/customer/addcustomer/addCustomer.html")
   const templateDeleteCustomer = await loadHtml("./pages/customer/deletecustomer/deletecustomer.html")
   const templateEditCustomer = await loadHtml("./pages/customer/editcustomer/editcustomer.html")
   const templateGetCustomer = await loadHtml("./pages/customer/getcustomer/getcustomer.html")
@@ -105,9 +103,8 @@ window.addEventListener("load", async () => {
       //For very simple "templates", you can just insert your HTML directly like below
       "/": () => document.getElementById("content").innerHTML = `
         <h2>Home</h2>
-        <img style="width:50%;max-width:600px;margin-top:1em;" src="./images/cars.png">
         <p style='margin-top:1em;font-size: 1.5em;color:darkgray;'>
-          Car's 'R' Us - Created, as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
+          AdventureXP - Created as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
         </p>
      `,
      //Customer
