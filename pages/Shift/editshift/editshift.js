@@ -1,6 +1,6 @@
 
 import { API_URL, FETCH_NO_API_ERROR } from "../../../settings.js";
-import { makeOptions, handleHttpErrors } from "../../../utils.js";
+import { makeOptions, makeOptionsToken, handleHttpErrors } from "../../../utils.js";
 const URL = `${API_URL}/shift`;
 
 export function initEditShift() {
