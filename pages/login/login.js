@@ -52,19 +52,24 @@ function storeLoginDetails(res) {
     //Hide or show all menu-links depending on login status
     document.getElementById("login-container").style.display = loggedIn ? "none" : "block"
     document.getElementById("logout-container").style.display = loggedIn ? "block" : "none"
+    document.getElementById("profile-container").style.display = loggedIn ? "block" : "none"
     
     const adminListItems = document.querySelectorAll('.admin-only');
     const userRoutes = document.querySelector('.user-only');
+    const employeeRoutes = document.querySelector('.employee-only');
     let isAdmin = false;
     let isUser = false;
+    let isEmployee = false;
     if (localStorage.getItem('roles')) {
        isAdmin = localStorage.getItem('roles').includes('ADMIN');
        isUser = localStorage.getItem('roles').includes('USER');
+       isEmployee = localStorage.getItem('roles').includes('EMPLOYEE');
     }
     for (var i = 0; i < adminListItems.length; i++) {
       adminListItems[i].style.display = isAdmin ? "block" : 'none'; // or any other value you want
     }
     userRoutes.style.display = isUser ? 'block' : 'none';
+    employeeRoutes.style.display = isEmployee ? 'block' : 'none';
     
   }
   
