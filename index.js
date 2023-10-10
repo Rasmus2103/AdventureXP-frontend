@@ -6,6 +6,7 @@ import {setActiveLink, loadHtml, renderHtml} from "./utils.js"
 
 import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
+import { initProfile } from "./pages/profile/profile.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
 import { initDeleteCustomer } from "./pages/customer/deletecustomer/deletecustomer.js"
@@ -19,25 +20,21 @@ import { initGetEmployee } from "./pages/employee/getemployee/getemployee.js"
 import { initGetAllEmployees } from "./pages/employee/getallemployees/getallemployees.js"
 
 import { initAddActivity } from "./pages/activity/addactivity/addactivity.js"
-import { initDeleteActivity } from "./pages/activity/deleteactivity/deleteactivity.js"
 import { initEditActivity } from "./pages/activity/editactivity/editactivity.js"
 import { initGetActivity } from "./pages/activity/getactivity/getactivity.js"
 import { initGetAllActivity } from "./pages/activity/getallactivity/getallactivity.js"
 
 import { initAddArrangement } from "./pages/arrangement/addarrangement/addarrangement.js"
-import { initDeleteArrangement } from "./pages/arrangement/deletearrangement/deletearrangement.js"
 import { initEditArrangement } from "./pages/arrangement/editarrangement/editarrangement.js"
 import { initGetArrangement } from "./pages/arrangement/getarrangement/getarrangement.js"
 import { initGetAllArrangements } from "./pages/arrangement/getallarrangements/getallarrangements.js"
 
 import { initAddReservation } from "./pages/reservation/addreservation/addreservation.js"
-import { initDeleteReservation } from "./pages/reservation/deletereservation/deletereservation.js"
 import { initEditReservation } from "./pages/reservation/editreservation/editreservation.js"
 import { initGetReservation } from "./pages/reservation/getreservation/getreservation.js"
 import { initGetAllReservations } from "./pages/reservation/getallreservations/getallreservations.js"
 
 import { initAddShift } from "./pages/Shift/addshift/addshift.js"
-import { initDeleteShift } from "./pages/Shift/deleteshift/deleteshift.js"
 import { initEditShift } from "./pages/Shift/editshift/editshift.js"
 import { initGetShift } from "./pages/Shift/getshift/getshift.js"
 import { initGetAllShifts } from "./pages/Shift/getallshifts/getallshifts.js"
@@ -48,6 +45,7 @@ window.addEventListener("load", async () => {
   const templateSignup = await loadHtml("./pages/signup/signup.html")
   const templateLogin = await loadHtml("./pages/login/login.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
+  const templateProfile = await loadHtml("./pages/profile/profile.html")
 
   const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
   const templateDeleteCustomer = await loadHtml("./pages/customer/deletecustomer/deletecustomer.html")
@@ -61,25 +59,21 @@ window.addEventListener("load", async () => {
   const templateGetAllEmployees = await loadHtml("./pages/employee/getallemployees/getallemployees.html")
 
   const templateAddReservation = await loadHtml("./pages/reservation/addreservation/addreservation.html")
-  const templateDeleteReservation = await loadHtml("./pages/reservation/deletereservation/deletereservation.html")
   const templateEditReservation = await loadHtml("./pages/reservation/editreservation/editreservation.html")
   const templateGetReservation = await loadHtml("./pages/reservation/getreservation/getreservation.html")
   const templateGetAllReservations = await loadHtml("./pages/reservation/getallreservations/getallreservations.html")
 
   const templateAddShift = await loadHtml("./pages/Shift/addshift/addshift.html")
-  const templateDeleteShift = await loadHtml("./pages/Shift/deleteshift/deleteshift.html")
   const templateEditShift = await loadHtml("./pages/Shift/editshift/editshift.html")
   const templateGetShift = await loadHtml("./pages/Shift/getshift/getshift.html")
   const templateGetAllShifts = await loadHtml("./pages/Shift/getallshifts/getallshifts.html")
 
   const templateAddActivity = await loadHtml("./pages/activity/addactivity/addactivity.html")
-  const templateDeleteActivity = await loadHtml("./pages/activity/deleteactivity/deleteactivity.html")
   const templateEditActivity = await loadHtml("./pages/activity/editactivity/editactivity.html")
   const templateGetActivity = await loadHtml("./pages/activity/getactivity/getactivity.html")
   const templateGetAllActivity = await loadHtml("./pages/activity/getallactivity/getallactivity.html")
 
   const templateAddArrangement = await loadHtml("./pages/arrangement/addarrangement/addarrangement.html")
-  const templateDeleteArrangement = await loadHtml("./pages/arrangement/deletearrangement/deletearrangement.html")
   const templateEditArrangement = await loadHtml("./pages/arrangement/editarrangement/editarrangement.html")
   const templateGetArrangement = await loadHtml("./pages/arrangement/getarrangement/getarrangement.html")
   const templateGetAllArrangements = await loadHtml("./pages/arrangement/getallarrangements/getallarrangements.html")
@@ -130,10 +124,6 @@ window.addEventListener("load", async () => {
         renderHtml(templateAddActivity, "content")
         initAddActivity()
       },
-      "/delete-activity": () => {
-        renderHtml(templateDeleteActivity, "content")
-        initDeleteActivity()
-      },
       "/edit-activity": () => {
         renderHtml(templateEditActivity, "content")
         initEditActivity()
@@ -150,10 +140,6 @@ window.addEventListener("load", async () => {
       "/add-arrangement": () => {
         renderHtml( templateAddArrangement, "content")
         initAddArrangement()
-      },
-      "/delete-arrangement": () => {
-        renderHtml(templateDeleteArrangement, "content")
-        initDeleteArrangement()
       },
       "/edit-arrangement": () => {
         renderHtml(templateEditArrangement, "content")
@@ -193,10 +179,6 @@ window.addEventListener("load", async () => {
         renderHtml(templateAddReservation, "content")
         initAddReservation()
       },
-      "/delete-reservation": () => {
-        renderHtml(templateDeleteReservation, "content")
-        initDeleteReservation()
-      },
       "/edit-reservation": () => {
         renderHtml(templateEditReservation, "content")
         initEditReservation()
@@ -213,10 +195,6 @@ window.addEventListener("load", async () => {
       "/add-shift": () => {
         renderHtml(templateAddShift, "content")
         initAddShift()
-      },
-      "/delete-shift": () => {
-        renderHtml(templateDeleteShift, "content")
-        initDeleteShift()
       },
       "edit-shift": () => {
         renderHtml(templateEditShift, "content")
@@ -241,6 +219,11 @@ window.addEventListener("load", async () => {
       },"/logout": () => {
         renderHtml(templateLogin, "content")
         logout()
+      },
+      //Profile
+      "/profile": () => {
+        renderHtml(templateProfile, "content")
+        initProfile()
       }
     })
     .notFound(() => {

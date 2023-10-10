@@ -1,6 +1,82 @@
-<div class="template"> 
-    <div>
-    
-    </div>    
+<div class="template">
+    <style>
+        .row button {
+            margin-top: 1em;
+            padding: 0.5em;
+        }
+
+        .car-btn-width {
+            width: 100%
+        }
+    </style>
+    <div style="max-width:900px;">
+        <h1>Find Activity</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-2">
+                <input id="activity-id-input" placeholder="Enter activity-id" />
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary" id="btn-fetch-activity">Get Activity</button>
+            </div>
+        </div>
+        <hr />
+        <form id="editActivityForm">
+            <div class="row">
+                <div class="col-md-1">
+                  <label>ID</label>
+                </div>
+                <div class="col-md-3">
+                  <input id="id" style="font-weight: bolder" disabled></input>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="pricePrHour">Price Per Hour</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="pricePrHour" type="number" step="0.01">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="minAge">Minimum Age</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="minAge" type="number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="capacity">Capacity</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="capacity" type="number">
+                </div>
+            </div>
+        </form>
+
+        <p id="status" style="min-height: 1em;"> </p>
+        <div class="row" style="margin-top:2em;">
+            <div class="col-md-3">
+                <button id="btn-submit-edited-activity" class="btn btn-dark car-btn-width">Submit Changes</button>
+            </div>
+            <div class="col-md-3">
+                <button id="btn-delete-activity" class="btn btn-dark car-btn-width">Delete Activity</button>
+            </div>
+            <p id="edit-message"></p>
+            <p id="new-editResponse"></p>
+            <p id="delete-message"></p>
+            <p id="new-deleteResponse"></p>
+            <p id="error" style="color:red"></p>
+        </div>
     </div>
-    
+</div>
