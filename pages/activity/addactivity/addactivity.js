@@ -1,4 +1,4 @@
-import { API_URL, handleHttpErrors, makeOptions } from "../../../settings.js";
+import { API_URL } from "../../../settings.js";
 //Add id to this URL to get a single user
 import { makeOptions, handleHttpErrors } from "../../../utils.js";
 
@@ -9,12 +9,12 @@ export async function initAddActivity() {
       e.preventDefault();
       const form = e.target;
       const name = form.name.value;
-      const price = form.price.value;
+      const pricePrHour = form.pricePrHour.value;
       const minAge = form.minAge.value;
       const capacity = form.capacity.value;
       const activity = {
         name,
-        price,
+        pricePrHour,
         minAge,
         capacity,
       };
@@ -22,5 +22,6 @@ export async function initAddActivity() {
       const res = await fetch(`${API_URL}/activity`, options).then(
         handleHttpErrors
       );
+      window.location.href = '#/get-all-activity';
     });
 }
