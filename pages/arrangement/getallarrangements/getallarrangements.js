@@ -10,9 +10,9 @@ export async function initGetAllArrangements() {
     const tableRows = arrangements.map(arrangement => 
         `<tr>
             <td>${arrangement.id}</td>
-            <td>${arrangement.customer}</td>
+            <td>${arrangement.customer.username}</td>
             <td>${arrangement.participants}</td>
-            <td>${arrangement.reservations}</td>
+            <td>${arrangement.reservations.map(reservation => reservation.id).join(', ')}</td>
             <td>${arrangement.name}</td>
             <td>${arrangement.aggregatePrice}</td>
             <td>${arrangement.arrangementStart}</td>

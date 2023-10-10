@@ -10,8 +10,8 @@ export async function initGetAllShifts() {
     const tableRows = shifts.map(shift => 
         `<tr>
             <td>${shift.id}</td>
-            <td>${shift.employeeResponse}</td>
-            <td>${shift.activityResponse}</td>
+            <td>${shift.employeeResponse.username}</td>
+            <td>${shift.activityResponse.name}</td>
             <td>${shift.shiftStart}</td>
             <td>${shift.shiftEnd}</td>
         </tr>`
