@@ -1,4 +1,4 @@
-import { API_URL, handleHttpErrors, makeOptions } from "../../../settings.js";
+import { API_URL } from "../../../settings.js";
 //Add id to this URL to get a single user
 import { makeOptions, handleHttpErrors } from "../../../utils.js";
 
