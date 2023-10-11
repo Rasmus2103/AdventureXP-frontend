@@ -14,7 +14,6 @@ import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
 import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
 
 import { initAddEmployee } from "./pages/employee/addemployee/addemployee.js"
-import { initDeleteEmployee } from "./pages/employee/deleteemployee/deleteemployee.js"
 import { initEditEmployee } from "./pages/employee/editemployee/editemployee.js"
 import { initGetEmployee } from "./pages/employee/getemployee/getemployee.js"
 import { initGetAllEmployees } from "./pages/employee/getallemployees/getallemployees.js"
@@ -53,7 +52,6 @@ window.addEventListener("load", async () => {
   const templateGetCustomer = await loadHtml("./pages/customer/getcustomer/getcustomer.html")
 
   const templateAddEmployee = await loadHtml("./pages/employee/addemployee/addemployee.html")
-  const templateDeleteEmployee = await loadHtml("./pages/employee/deleteemployee/deleteemployee.html")
   const templateEditEmployee = await loadHtml("./pages/employee/editemployee/editemployee.html")
   const templateGetEmployee = await loadHtml("./pages/employee/getemployee/getemployee.html")
   const templateGetAllEmployees = await loadHtml("./pages/employee/getallemployees/getallemployees.html")
@@ -156,10 +154,6 @@ window.addEventListener("load", async () => {
       "/add-employee": () => {
         renderHtml(templateAddEmployee, "content")
         initAddEmployee()
-      },
-      "/delete-employee": () => {
-        renderHtml(templateDeleteEmployee, "content")
-        initDeleteEmployee()
       },
       "/edit-employee": () => {
         renderHtml(templateEditEmployee, "content")

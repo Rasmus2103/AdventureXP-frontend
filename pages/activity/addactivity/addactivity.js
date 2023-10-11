@@ -1,6 +1,6 @@
 import { API_URL } from "../../../settings.js";
 //Add id to this URL to get a single user
-import { makeOptions, handleHttpErrors } from "../../../utils.js";
+import { makeOptions, makeOptionsToken, handleHttpErrors } from "../../../utils.js";
 
 export async function initAddActivity() {
   document
