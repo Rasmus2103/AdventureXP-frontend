@@ -9,7 +9,6 @@ import { initSignup } from "./pages/signup/signup.js"
 import { initProfile } from "./pages/profile/profile.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
-import { initDeleteCustomer } from "./pages/customer/deletecustomer/deletecustomer.js"
 import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
 import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
 
@@ -47,7 +46,6 @@ window.addEventListener("load", async () => {
   const templateProfile = await loadHtml("./pages/profile/profile.html")
 
   const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
-  const templateDeleteCustomer = await loadHtml("./pages/customer/deletecustomer/deletecustomer.html")
   const templateEditCustomer = await loadHtml("./pages/customer/editcustomer/editcustomer.html")
   const templateGetCustomer = await loadHtml("./pages/customer/getcustomer/getcustomer.html")
 
@@ -103,10 +101,6 @@ window.addEventListener("load", async () => {
      "/all-customers": () => {
         renderHtml(templateGetAllCustomer, "content")
         initCustomers()
-      },
-      "/delete-customer": () => {
-        renderHtml(templateDeleteCustomer, "content")
-        initDeleteCustomer()
       },
       "/edit-customer": () => {
         renderHtml(templateEditCustomer, "content")
