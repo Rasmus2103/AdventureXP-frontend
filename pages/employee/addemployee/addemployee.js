@@ -1,6 +1,6 @@
 import { API_URL } from "../../../settings.js";
 //Add id to this URL to get a single user
-import { makeOptions, handleHttpErrors } from "../../../utils.js";
+import { makeOptionsToken, handleHttpErrors } from "../../../utils.js";
 
 export async function initAddEmployee() {
   document
@@ -26,7 +26,7 @@ export async function initAddEmployee() {
         address,
         discriminatorType,
       };
-      const options = makeOptions("POST", employee);
+      const options = makeOptionsToken("POST", employee);
       const res = await fetch(`${API_URL}/employee`, options).then(
         handleHttpErrors
       );
