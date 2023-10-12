@@ -11,12 +11,10 @@ import { initProfile } from "./pages/profile/profile.js"
 import { initHomePage } from "./pages/home/HomePage.js"
 
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
-import { initDeleteCustomer } from "./pages/customer/deletecustomer/deletecustomer.js"
 import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
 import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
 
 import { initAddEmployee } from "./pages/employee/addemployee/addemployee.js"
-import { initDeleteEmployee } from "./pages/employee/deleteemployee/deleteemployee.js"
 import { initEditEmployee } from "./pages/employee/editemployee/editemployee.js"
 import { initGetEmployee } from "./pages/employee/getemployee/getemployee.js"
 import { initGetAllEmployees } from "./pages/employee/getallemployees/getallemployees.js"
@@ -52,12 +50,10 @@ window.addEventListener("load", async () => {
   const templateGetHomePage = await loadHtml("./pages/home/HomePage.html")
 
   const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
-  const templateDeleteCustomer = await loadHtml("./pages/customer/deletecustomer/deletecustomer.html")
   const templateEditCustomer = await loadHtml("./pages/customer/editcustomer/editcustomer.html")
   const templateGetCustomer = await loadHtml("./pages/customer/getcustomer/getcustomer.html")
 
   const templateAddEmployee = await loadHtml("./pages/employee/addemployee/addemployee.html")
-  const templateDeleteEmployee = await loadHtml("./pages/employee/deleteemployee/deleteemployee.html")
   const templateEditEmployee = await loadHtml("./pages/employee/editemployee/editemployee.html")
   const templateGetEmployee = await loadHtml("./pages/employee/getemployee/getemployee.html")
   const templateGetAllEmployees = await loadHtml("./pages/employee/getallemployees/getallemployees.html")
@@ -107,10 +103,6 @@ window.addEventListener("load", async () => {
         renderHtml(templateGetAllCustomer, "content")
         initCustomers()
       },
-      "/delete-customer": () => {
-        renderHtml(templateDeleteCustomer, "content")
-        initDeleteCustomer()
-      },
       "/edit-customer": () => {
         renderHtml(templateEditCustomer, "content")
         initEditCustomer()
@@ -157,10 +149,6 @@ window.addEventListener("load", async () => {
       "/add-employee": () => {
         renderHtml(templateAddEmployee, "content")
         initAddEmployee()
-      },
-      "/delete-employee": () => {
-        renderHtml(templateDeleteEmployee, "content")
-        initDeleteEmployee()
       },
       "/edit-employee": () => {
         renderHtml(templateEditEmployee, "content")
