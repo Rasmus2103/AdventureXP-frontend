@@ -50,7 +50,7 @@ async function addShift() {
   };
 
 
-   const options = makeOptionsToken("POST", shift);
+   const options = makeOptionsToken("POST", shift, true);
    fetch(URL, options)
    .then(handleHttpErrors)
     .then( 

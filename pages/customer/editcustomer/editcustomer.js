@@ -21,7 +21,7 @@ async function editCustomer() {
         address: form.Address.value
     };
   
-    const options = makeOptionsToken("PUT", customer);
+    const options = makeOptionsToken("PUT", customer, true);
   
     const updatedCustomer = await fetch(`${URL}/${customer.username}`, options).then(handleHttpErrors);
   
@@ -36,7 +36,8 @@ async function findCustomerToEdit() {
         document.getElementById("delete-message").innerText = "";
         document.getElementById("edit-message").innerText = "";
         const id = document.getElementById("customer-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching customer with ID ${id}: ${response.statusText}`);
@@ -63,7 +64,7 @@ async function deleteCustomer() {
     
         const form = document.getElementById("editcustomerForm");
         const id = form.username.value;
-        const options = makeOptionsToken("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedCustomer = await fetch(`${URL}/${id}`, options)
         .then(handleHttpErrors)

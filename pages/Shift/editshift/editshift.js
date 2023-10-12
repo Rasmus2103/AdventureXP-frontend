@@ -19,7 +19,7 @@ async function editShift() {
         shiftEnd: form['shift-end'].value
     };
   
-    const options = makeOptions("PUT", shift);
+    const options = makeOptionsToken("PUT", shift, true);
   
     const updatedShift = await fetch(`${URL}/${shift.id}`, options).then(res => res.json());
   
@@ -30,7 +30,8 @@ async function editShift() {
 async function findShiftToEdit() {
     try {
         const id = document.getElementById("shift-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching shift with ID ${id}: ${response.statusText}`);
@@ -58,7 +59,7 @@ async function deleteShift() {
     try {
         const form = document.getElementById("editShiftForm");
         const id = form.id.value;
-        const options = makeOptions("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedShift = await fetch(`${URL}/${id}`, options).then(res => res.json());
         

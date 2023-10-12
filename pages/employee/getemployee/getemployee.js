@@ -1,5 +1,5 @@
 import { API_URL,FETCH_NO_API_ERROR } from "../../../settings.js"
-import { makeOptions, handleHttpErrors} from "../../../utils.js"
+import { makeOptionsToken, handleHttpErrors} from "../../../utils.js"
 const URL = `${API_URL}/employee`
 
 export function initGetEmployee() {
@@ -14,7 +14,8 @@ async function findEmployee() {
         const id = idElem.value;
 
         try {
-            const employee = await fetch(URL + "/" + id)
+            const options = makeOptionsToken("GET", null, true);
+            const employee = await fetch(URL + "/" + id, options)
             .then(res => {
                 if(!res.ok) {
                     throw new Error("Employee not found");

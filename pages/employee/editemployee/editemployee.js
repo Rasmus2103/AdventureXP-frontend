@@ -21,7 +21,7 @@ async function editEmployee() {
         address: form.Address.value
     };
   
-    const options = makeOptionsToken("PUT", employee);
+    const options = makeOptionsToken("PUT", employee, true);
   
     const updatedEmployee = await fetch(`${URL}/${employee.username}`, options).then(res => res.json());
   
@@ -36,7 +36,8 @@ async function findEmployeeToEdit() {
         document.getElementById("delete-message").innerText = "";
         document.getElementById("edit-message").innerText = "";
         const id = document.getElementById("employee-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching employee with ID ${id}: ${response.statusText}`);
@@ -63,7 +64,7 @@ async function deleteEmployee() {
     
         const form = document.getElementById("editEmployeeForm");
         const id = form.username.value;
-        const options = makeOptionsToken("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedEmployee = await fetch(`${URL}/${id}`, options)
         .then(handleHttpErrors)

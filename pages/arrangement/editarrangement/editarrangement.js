@@ -1,5 +1,5 @@
 import { API_URL, FETCH_NO_API_ERROR } from "../../../settings.js";
-import { makeOptions, handleHttpErrors } from "../../../utils.js";
+import { makeOptionsToken, handleHttpErrors } from "../../../utils.js";
 const URL = `${API_URL}/arrangements`;
 
 export function initEditArrangement() {
@@ -20,7 +20,7 @@ async function editArrangement() {
         arrangementEnd: form.arrangementEnd.value
     };
   
-    const options = makeOptions("PUT", arrangement);
+    const options = makeOptionsToken("PUT", arrangement, true);
   
     const updatedArrangement = await fetch(`${URL}/${arrangement.id}`, options).then(res => res.json());
   
@@ -31,7 +31,8 @@ async function editArrangement() {
 async function findArrangementToEdit() {
     try {
         const id = document.getElementById("arrangement-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching arrangement with ID ${id}: ${response.statusText}`);
@@ -77,7 +78,7 @@ async function deleteArrangement() {
     try {
         const form = document.getElementById("editArrangementForm");
         const id = form.id.value;
-        const options = makeOptions("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedArrangement = await fetch(`${URL}/${id}`, options).then(res => res.json());
         
