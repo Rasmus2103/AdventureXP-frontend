@@ -18,7 +18,7 @@ export async function initAddActivity() {
         minAge,
         capacity,
       };
-      const options = makeOptions("POST", activity);
+      const options = makeOptionsToken("POST", activity, true);
       const res = await fetch(`${API_URL}/activity`, options).then(
         handleHttpErrors
       );

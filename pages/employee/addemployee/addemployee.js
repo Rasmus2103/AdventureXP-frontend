@@ -26,7 +26,7 @@ export async function initAddEmployee() {
         address,
         discriminatorType,
       };
-      const options = makeOptionsToken("POST", employee);
+      const options = makeOptionsToken("POST", employee, true);
       const res = await fetch(`${API_URL}/employee`, options).then(
         handleHttpErrors
       );
