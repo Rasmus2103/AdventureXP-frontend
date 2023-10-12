@@ -2,10 +2,12 @@ import { API_URL, FETCH_NO_API_ERROR } from "../../settings.js"
 import { makeOptions, handleHttpErrors, makeOptionsToken } from "../../utils.js"
 const URLCustomer = `${API_URL}/customer/profile`
 const URLEmployee = `${API_URL}/employee/profile`
+const URLAddcredits = `${API_URL}/customer/addcredit`
 
 export async function initProfile() {
     const options = makeOptionsToken('GET', null, true);
     const roles = localStorage.getItem('roles').split(',');
+    document.getElementById('add-credit-btn').addEventListener("click", addCredit)
 
     if (roles.includes('ADMIN') || roles.includes('EMPLOYEE')) {
         try {
@@ -14,9 +16,7 @@ export async function initProfile() {
             const employeeData = await responseEmployee.json();
             populateAdminProfile(employeeData);
             populateEmployeeProfile(employeeData);
-            console.log("Employee data:", employeeData);
 
-            // Decide which section to display based on roles
             if (roles.includes('ADMIN')) {
                 displaySection('admin-section');
             } else if (roles.includes('EMPLOYEE')) {
@@ -34,14 +34,16 @@ export async function initProfile() {
             if (!responseCustomer.ok) throw new Error("User Profile fetch failed");
             const customerData = await responseCustomer.json();
             populateUserProfile(customerData);
-            console.log("Customer data:", customerData);
-
             displaySection('user-section');
 
         } catch (error) {
             console.error("Error fetching user profile:", error);
         }
     }
+}
+
+async function addCredit() {
+    
 }
 
 
