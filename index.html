@@ -13,19 +13,21 @@
   <script src="index.js" type="module"></script>
 </head>
 <body>
-    <h1>AdventureXP</h1>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size:larger">
-        <div class="container-fluid">
+
+
+
+    <nav id="menu-bar" class="navbar navbar-expand-lg " style="font-size:larger" >
+
+      <a href="/" data-navigo><h1>AdventureXP</h1></a>
+
+      <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul id="menu" class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="/" data-navigo>Home</a>
-              </li>
               <li class="nav-item dropdown admin-only">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -76,7 +78,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown user-only admin-only ">
+              <li class="nav-item dropdown user-only admin-only">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   Arrangement
@@ -95,10 +97,10 @@
                   Activity
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/add-activity" data-navigo>Make activity</a></li>    
+                  <li><a class="dropdown-item admin-only" href="/add-activity" data-navigo>Make activity</a></li>
                   <li><a class="dropdown-item" href="/get-all-activity" data-navigo>See all activities</a></li>
                   <li><a class="dropdown-item" href="/get-activity" data-navigo>See Specific activity</a></li>
-                  <li><a class="dropdown-item" href="/edit-activity" data-navigo>Edit activity</a></li>
+                  <li><a class="dropdown-item admin-only" href="/edit-activity" data-navigo>Edit activity</a></li>
                 </ul>
               </li>
 
@@ -119,7 +121,7 @@
         </div>
       </nav>
     
-      <div id="content" style="margin:5%;margin-top:3%;"></div>
+      <div id="content"></div>
       </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

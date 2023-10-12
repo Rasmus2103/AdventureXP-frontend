@@ -2,6 +2,6 @@
 replit.nix
 tailwind.config.js
 /node_modules
-package-lock.json
-package.json
+pages/home/package-lock.json
+pages/home/package.json
 

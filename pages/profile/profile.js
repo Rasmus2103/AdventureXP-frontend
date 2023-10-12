@@ -4,6 +4,7 @@ const URLCustomer = `${API_URL}/customer/profile`
 const URLEmployee = `${API_URL}/employee/profile`
 
 export async function initProfile() {
+
     const options = makeOptionsToken('GET', null, true);
     const roles = localStorage.getItem('roles').split(',');
 
@@ -79,6 +80,3 @@ function displaySection(sectionId) {
     });
     document.getElementById(sectionId).style.display = 'block';
 }
-
-
-
