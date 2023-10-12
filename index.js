@@ -8,6 +8,8 @@ import { initLogin, logout, toggleLoginStatus } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 import { initProfile } from "./pages/profile/profile.js"
 
+import { initHomePage } from "./pages/home/HomePage.js"
+
 import { initCustomers } from "./pages/customer/getallcustomers/getallcustomers.js" 
 import { initEditCustomer } from "./pages/customer/editcustomer/editcustomer.js"
 import { initGetCustomer } from "./pages/customer/getcustomer/getcustomer.js"
@@ -44,6 +46,8 @@ window.addEventListener("load", async () => {
   const templateLogin = await loadHtml("./pages/login/login.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   const templateProfile = await loadHtml("./pages/profile/profile.html")
+
+  const templateGetHomePage = await loadHtml("./pages/home/HomePage.html")
 
   const templateGetAllCustomer = await loadHtml("./pages/customer/getallcustomers/getallcustomers.html")
   const templateEditCustomer = await loadHtml("./pages/customer/editcustomer/editcustomer.html")
@@ -90,13 +94,10 @@ window.addEventListener("load", async () => {
       }
     })
     .on({
-      //For very simple "templates", you can just insert your HTML directly like below
-      "/": () => document.getElementById("content").innerHTML = `
-        <h2>Home</h2>
-        <p style='margin-top:1em;font-size: 1.5em;color:darkgray;'>
-          Adventure - Created  as a help to make GREAT fullstack developers <span style='font-size:2em;'>&#128516;</span>
-        </p>
-     `,
+      "/": () => {
+          renderHtml(templateGetHomePage, "content")
+          initHomePage()
+      },
      //Customer
      "/all-customers": () => {
         renderHtml(templateGetAllCustomer, "content")

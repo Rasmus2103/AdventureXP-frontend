@@ -5,6 +5,7 @@ const URLEmployee = `${API_URL}/employee/profile`
 const URLAddcredits = `${API_URL}/customer/addcredit`
 
 export async function initProfile() {
+
     const options = makeOptionsToken('GET', null, true);
     const roles = localStorage.getItem('roles').split(',');
     document.getElementById('add-credit-btn').addEventListener("click", addCredit)
@@ -81,6 +82,3 @@ function displaySection(sectionId) {
     });
     document.getElementById(sectionId).style.display = 'block';
 }
-
-
-

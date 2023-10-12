@@ -5,6 +5,14 @@ Styles used for labels and input fields in boot strap columns
 
 */
 
+.template {
+  margin: 3% 5% 5%;
+}
+
+#home {
+  margin: 0 0 0;
+}
+
 .row label {
     margin-top: 1.5em;
     vertical-align: middle;
@@ -18,5 +26,100 @@ Styles used for labels and input fields in boot strap columns
     width:100%;
     border: 1px solid lightgray;
   }
-  
-  
+
+  #menu-bar {
+    background-color: #c21414;
+    color: #ffffff;
+    padding: 0.5em;
+  }
+
+  #menu-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5em;
+  }
+
+#profile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#profile img {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+
+#profile-text {
+  width: 80%;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+#carouselExampleAutoplaying {
+  height: 400px;
+}
+
+#carouselExampleAutoplaying img {
+  object-fit: fill;
+  height: 400px;
+}
+
+#booking-bar {
+  width: 100%;
+  background-color: #b8b8b8;;
+  padding: 0;
+}
+
+#booking-bar .container {
+  width: 100%;
+  padding: 0;
+}
+
+#booking-bar .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+}
+
+#booking-bar .col {
+  width: 40%;
+  padding: 0;
+}
+#booking-bar .col-small {
+  width: 20%;
+  padding: 0;
+}
+
+#booking-bar .col-participants {
+  width: 20%;
+  padding: 0;
+}
+
+#booking-bar select,
+#booking-bar input {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+#booking-bar button {
+  width: 10%;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+}
+
+#lorem-ipsum-text {
+  background-color: #dcdcdc;
+    padding: 24px;
+}
