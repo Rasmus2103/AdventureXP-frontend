@@ -4,4 +4,5 @@ tailwind.config.js
 /node_modules
 pages/home/package-lock.json
 pages/home/package.json
-
+package-lock.json
+package.json
