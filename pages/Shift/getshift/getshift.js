@@ -1,5 +1,5 @@
 import { API_URL,FETCH_NO_API_ERROR } from "../../../settings.js"
-import { makeOptions, handleHttpErrors} from "../../../utils.js"
+import { makeOptionsToken, handleHttpErrors} from "../../../utils.js"
 const URL = `${API_URL}/shift`
 
 export function initGetShift() {
@@ -14,7 +14,8 @@ async function findShift() {
         const id = idElem.value;
 
         try {
-            const shift = await fetch(URL + "/" + id)
+            const options = makeOptionsToken("GET", null, true);
+            const shift = await fetch(URL + "/" + id, options)
             .then(res => {
                 if(!res.ok) {
                     throw new Error("Shift not found");

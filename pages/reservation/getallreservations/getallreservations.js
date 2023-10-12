@@ -1,10 +1,11 @@
 
 import { API_URL,FETCH_NO_API_ERROR } from "../../../settings.js"
 const URL = API_URL + "/reservation"
-import { makeOptions, handleHttpErrors, sanitizeStringWithTableRows} from "../../../utils.js"
+import { makeOptionsToken, handleHttpErrors, sanitizeStringWithTableRows} from "../../../utils.js"
 
 export async function initGetAllReservations() {
-  const reservations = await fetch(URL).then(res => res.json())
+    const options = makeOptionsToken("GET", null, true);
+  const reservations = await fetch(URL, options).then(res => res.json())
 
     const tableRows = reservations.map(reservation => 
         `<tr>

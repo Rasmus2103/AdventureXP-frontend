@@ -20,7 +20,7 @@ async function editReservation() {
         reservationEnd: form['reservation-end'].value
     };
   
-    const options = makeOptions("PUT", reservation);
+    const options = makeOptionsToken("PUT", reservation, true);
   
     const updatedReservation = await fetch(`${URL}/${reservation.id}`, options).then(res => res.json());
   
@@ -31,7 +31,8 @@ async function editReservation() {
 async function findReservationToEdit() {
     try {
         const id = document.getElementById("reservation-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching reservation with ID ${id}: ${response.statusText}`);
@@ -61,7 +62,7 @@ async function deleteReservation() {
     try {
         const form = document.getElementById("editCarForm");
         const id = form.id.value;
-        const options = makeOptions("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedReservation = await fetch(`${URL}/${id}`, options).then(res => res.json());
         

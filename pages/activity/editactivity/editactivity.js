@@ -1,5 +1,5 @@
 import { API_URL, FETCH_NO_API_ERROR } from "../../../settings.js";
-import { makeOptions, handleHttpErrors } from "../../../utils.js";
+import { makeOptionsToken, handleHttpErrors } from "../../../utils.js";
 const URL = `${API_URL}/activity`;
 
 export function initEditActivity() {
@@ -18,7 +18,7 @@ async function editActivity() {
         capacity: parseInt(form.capacity.value)
     };
   
-    const options = makeOptions("PUT", activity);
+    const options = makeOptionsToken("PUT", activity, true);
   
     const updatedActivity = await fetch(`${URL}/${activity.id}`, options).then(res => res.json());
   
@@ -29,7 +29,8 @@ async function editActivity() {
 async function findActivityToEdit() {
     try {
         const id = document.getElementById("activity-id-input").value;
-        const response = await fetch(`${URL}/${id}`);
+        const options = makeOptionsToken("GET", null, true);
+        const response = await fetch(`${URL}/${id}`, options);
         
         if (!response.ok) {
             throw new Error(`Error fetching activity with ID ${id}: ${response.statusText}`);
@@ -54,7 +55,7 @@ async function deleteActivity() {
     try {
         const form = document.getElementById("editActivityForm");
         const id = form.id.value;
-        const options = makeOptions("DELETE");
+        const options = makeOptionsToken("DELETE", null, true);
 
         const deletedActivity = await fetch(`${URL}/${id}`, options).then(res => res.json());
         
