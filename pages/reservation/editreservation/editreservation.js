@@ -59,7 +59,7 @@ async function findReservationToEdit() {
 
 async function deleteReservation() {
     try {
-        const form = document.getElementById("editCarForm");
+        const form = document.getElementById("editReservationForm");
         const id = form.id.value;
         const options = makeOptions("DELETE");
 
