@@ -44,7 +44,29 @@ export async function initProfile() {
 }
 
 async function addCredit() {
-    
+    const username = document.getElementById('user-profile-username').textContent;
+    const value = document.getElementById('credit-input').value;
+
+    if (!value) {
+        document.getElementById("credit-message").innerText = 'Please enter a value to add as credit.';
+        return;
+    }
+
+    const options = makeOptionsToken('PATCH', null, true);
+
+    try {
+        const response = await fetch(`${URLAddcredits}/${username}/${value}`, options)
+        if(!response.ok) throw new Error("Failed to add credit")
+
+        const updatedProfile = await response.json()
+
+        document.getElementById('user-profile-credit').textContent = updatedProfile.credit
+        document.getElementById("credit-message").innerText = 'Credits added succesfully';
+        console.log("Set credit to: ", document.getElementById('user-profile-credit').textContent);
+    } catch (error) {
+        console.error("Error adding credit:", error);
+        document.getElementById("credit-message").innerText = 'Error adding credit. Please try again.';
+    }
 }
 
 
