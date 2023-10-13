@@ -22,7 +22,7 @@ async function singUp(event) {
 
   const customer = { username, password, email, firstName, lastName, phoneNumber, address }
 
-  const options = makeOptions("POST", customer);
+  const options = makeOptionsToken("POST", customer);
   fetch(URL, options)
   .then(handleHttpErrors)
   .then( 

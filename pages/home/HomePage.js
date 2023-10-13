@@ -25,7 +25,6 @@ export async function initHomePage() {
 async function makeReservation() {
     const roles = localStorage.getItem('roles').split(',');
 
-    // Ensure it's a USER role making the reservation
     if (!roles.includes('USER')) {
         console.error("Only users can make a reservation.");
         return;
@@ -38,7 +37,6 @@ async function makeReservation() {
     let reservationEnd = new Date(reservationStart);
     reservationEnd.setHours(reservationStart.getHours() + duration);
 
-    // Convert the date objects to match backend's LocalDateTime format
     reservationStart = formatLocalDateTime(reservationStart);
     reservationEnd = formatLocalDateTime(reservationEnd);
 
@@ -56,7 +54,7 @@ async function makeReservation() {
         numberOfPeople
     };
 
-    const options = makeOptionsToken('POST', reservationData, true);
+    const options = makeOptionsToken('POST', reservationData);
 
     try {
         const response = await fetch(URL_RESERVATION, options);
