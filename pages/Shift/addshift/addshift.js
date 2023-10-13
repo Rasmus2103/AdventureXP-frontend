@@ -26,7 +26,7 @@ async function findEmployeeAndActivity() {
         form.username.value = employee.username;
 
         const idActivity = document.getElementById("activity-id-input").value;
-        const responseActivity = await fetch(`${API_URL}/activity/${idActivity}`);
+        const responseActivity = await fetch(`${API_URL}/activity/${idActivity}`, options);
         if (!responseActivity.ok) {
          throw new Error(`Error fetching activity with ID ${idActivity}: ${responseActivity.statusText}`);
         }

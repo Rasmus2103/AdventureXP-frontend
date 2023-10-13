@@ -1,6 +1,69 @@
-<div class="template"> 
-    <div>
+<div class="template">
+    <div style="max-width:900px;">
+        <h1>Add Reservation</h1>
+        <hr />
+        <div class="row">
     
-    </div>    
+    <div class="col-md-2">
+        <input id="activity-id-input" placeholder="Enter activity" />
     </div>
-    
+    <div class="col-md-2">
+        <button class="btn btn-primary" id="btn-fetch-activity">Find activity</button>
+    </div>
+</div>
+<hr />
+
+    <form id="addReservationForm">
+    <div class="row">
+        <div class="col-md-2">
+            <label for="activityId">activity-id</label>
+        </div>
+        <div class="col-md-10">
+            <input id="activityId" disabled>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <label for="Participants">Participants</label>
+        </div>
+        <div class="col-md-10">
+            <input type="number" id="Participants">
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+          <label for="start-time">Start Time</label>
+      </div>
+      <div class="col-md-10">
+          <input type="datetime-local" id="start-time">
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-2">
+          <label for="end-time">End Time</label>
+      </div>
+      <div class="col-md-10">
+          <input type="datetime-local" id="end-time">
+      </div>
+  </div>
+  
+
+    <div class="row">
+        <p id="status" style="min-height: 1em; margin-top: 0.5em;"></p>
+        <div style="margin-top: 2em;">
+            <button id="btn-submit-reservation" class="btn btn-dark">Make Reservation</button>
+        </div>
+    </div>
+</form>
+
+
+    <br>
+    <br>
+    <p id="error"></p>
+    <p id="succes"></p>
+    <p id="new-reservation-response"></p>
+  </div>
+</div>
