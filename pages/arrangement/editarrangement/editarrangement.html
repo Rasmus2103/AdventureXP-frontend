@@ -1,0 +1,98 @@
+<div class="template">
+    <style>
+        .row button {
+            margin-top: 1em;
+            padding: 0.5em;
+        }
+
+        .car-btn-width {
+            width: 100%
+        }
+    </style>
+    <div style="max-width:900px;">
+        <h1>Find Arrangement</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-2">
+                <input id="arrangement-id-input" placeholder="Enter arrangement-id" />
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary" id="btn-fetch-arrangement">Get Arrangement</button>
+            </div>
+        </div>
+        <hr />
+        <form id="editArrangementForm">
+            <div class="row">
+                <div class="col-md-1">
+                  <label>ID</label>
+                </div>
+                <div class="col-md-3">
+                  <input id="id" style="font-weight: bolder" disabled></input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="customerUsername">Customer Username</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="customerUsername">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="participants">Participants</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="participants" type="number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="reservationIds">Reservation IDs (comma separated)</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="reservationIds">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="arrangementStart">Start Date & Time</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="arrangementStart" type="datetime-local">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="arrangementEnd">End Date & Time</label>
+                </div>
+                <div class="col-md-10">
+                    <input id="arrangementEnd" type="datetime-local">
+                </div>
+            </div>
+        </form>
+
+        <p id="status" style="min-height: 1em;"> </p>
+        <div class="row" style="margin-top:2em;">
+            <div class="col-md-3">
+                <button id="btn-submit-edited-arrangement" class="btn btn-dark car-btn-width">Submit Changes</button>
+            </div>
+            <div class="col-md-3">
+                <button id="btn-delete-arrangement" class="btn btn-dark car-btn-width">Delete Arrangement</button>
+            </div>
+            <p id="edit-message"></p>
+            <p id="new-editResponse"></p>
+            <p id="delete-message"></p>
+            <p id="new-deleteResponse"></p>
+            <p id="error" style="color:red"></p>
+        </div>
+    </div>
+</div>

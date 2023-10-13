@@ -1,0 +1,75 @@
+<div class="template">
+    <style>
+      row.div,
+      span {
+        font-weight: bold;
+      }
+    </style>
+  
+    <div>
+      <h3>All Shifts</h3>
+      <table class="table" style="max-width:1000px;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Employee on that Shift</th>
+            <th>Activity</th>
+            <th>Shift Start</th>
+            <th>Shift End</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody id="tbl-body">
+        </tbody>
+      </table>
+      <p id="error" style="color:red"></p>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="member-details-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="member-content"></div>
+            <div class="row">
+              <div class="col-md-3"><span>ID:</span></div>
+              <div class="col-md-9">
+                <p id="user-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Employee:</span></div>
+              <div class="col-md-9">
+                <p id="email"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Activity:</span></div>
+              <div class="col-md-9">
+                <p id="first-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Shift Start:</span></div>
+              <div class="col-md-9">
+                <p id="last-name"></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3"><span>Shift End:</span></div>
+              <div class="col-md-9">
+                <p id="phonenumber"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    

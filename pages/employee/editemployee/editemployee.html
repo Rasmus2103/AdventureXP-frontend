@@ -1,0 +1,101 @@
+<div class="template">
+    <style>
+      .row button {
+        margin-top: 1em;
+        padding: 0.5em;
+      }
+  
+      .car-btn-width {
+        width: 100%
+      }
+    </style>
+    <div style="max-width:900px;">
+      <h1>Find Employee</h1>
+      <hr />
+      <div class="row">
+        <div class="col-md-2">
+          <input id="employee-id-input" placeholder="Enter username" />
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" id="btn-fetch-employee">Get Employee</button>
+        </div>
+      </div>
+      <hr />
+      <form id="editEmployeeForm">
+      <h4 id="info-text" style="margin-top: 0.5em;min-height: 1em;" id="id"></h4>
+      <div>
+
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="username">Username</label>
+    </div>
+    <div class="col-md-10">
+        <input id="username" style="font-weight: bolder" disabled>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="Email">E-mail</label>
+    </div>
+    <div class="col-md-10">
+        <input id="Email">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="Firstname">First-name</label>
+    </div>
+    <div class="col-md-10">
+        <input id="Firstname">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="Lastname">Last-name</label>
+    </div>
+    <div class="col-md-10">
+        <input id="Lastname">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="Phonenumber">Phone-number</label>
+    </div>
+    <div class="col-md-10">
+        <input id="Phonenumber">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <label for="Address">Address</label>
+    </div>
+    <div class="col-md-10">
+        <input id="Address">
+    </div>
+</div>
+        
+        <p id="status" style="min-height: 1em;"> </p>
+        <div class="row" style="margin-top:2em;">
+          <div class="col-md-3">
+            <button id="btn-submit-edited-employee" class="btn btn-dark car-btn-width">Submit Changes</button>
+          </div>
+          <div class="col-md-3">
+            <button id="btn-delete-employee" class="btn btn-dark car-btn-width">Delete Employee</button>
+          </div>
+          <p id="edit-message"></p>
+          <p id="new-editResponse"></p>
+          <p id="delete-message"></p>
+          <p id="new-deleteResponse"></p>
+          <p id="error" style="color:red"></p>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+    

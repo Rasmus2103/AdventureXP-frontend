@@ -1,0 +1,61 @@
+<div class="template" id="home">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://esmark.dk/wp-content/uploads/minigolf-vestjylland-blavand.jpg" class="d-block w-100" alt="minigolf">
+            </div>
+            <div class="carousel-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/SupAir_Player.jpg/1200px-SupAir_Player.jpg" class="d-block w-100" alt="paintball">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.thesun.co.uk/wp-content/uploads/2019/10/NINTCHDBPICT000001002805-e1571217217504.jpg" class="d-block w-100" alt="dwarf-throwing">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="booking-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <select id="activity-select">
+                        <option value="">Select an activity</option>
+                    </select>
+                </div>
+
+                <div class="col-small">
+                    <input type="datetime-local" id="booking-date-time-start" placeholder="Start Date and time">
+                </div>
+
+                <div class="col-small">
+                    <input type="number" id="booking-range" placeholder="Duration (in hours)" max="8">
+                </div>
+
+                <div class="col-participants">
+                    <input type="number" id="booking-people" placeholder="Number of people">
+                </div>
+    
+                <button type="button" id="booking-button">Book now</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="lorem-ipsum-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada libero eget lectus auctor, id tempus nibh elementum. Fusce nec tellus feugiat, semper odio eu, commodo felis. Praesent non enim sit amet ante hendrerit eleifend. Morbi eget enim ac purus aliquam semper.</p>
+
+        <p>Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas convallis tortor ac lectus condimentum, ac egestas mauris elementum. Sed ut justo eget velit facilisis pharetra. Sed eu augue et odio laoreet consectetur at sed libero.</p>
+    </div>
+
+</div>
