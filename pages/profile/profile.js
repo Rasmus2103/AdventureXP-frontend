@@ -36,7 +36,6 @@ export async function initProfile() {
             const customerData = await responseCustomer.json();
             populateUserProfile(customerData);
             displaySection('user-section');
-
         } catch (error) {
             console.error("Error fetching user profile:", error);
         }
