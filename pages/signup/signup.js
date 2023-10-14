@@ -30,5 +30,5 @@ async function singUp(event) {
     .innerText = JSON.stringify(carResponse, null, 3)).catch(err =>
         document.getElementById("new-customer-response").innerHTML = err
     )
-    
+    window.location.href = '#/login';
 }

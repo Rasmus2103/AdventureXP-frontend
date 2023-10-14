@@ -30,6 +30,12 @@ async function makeReservation() {
         return;
     }
 
+    const username = localStorage.getItem('username');
+    if (!username) {
+        console.error("User is not authenticated.");
+        return;
+    }
+
     const activityId = document.getElementById("activity-select").value;
     let reservationStart = new Date(document.getElementById('booking-date-time-start').value);
     let duration = parseInt(document.getElementById('booking-range').value, 10);
@@ -51,7 +57,8 @@ async function makeReservation() {
         activityId,
         reservationStart,
         reservationEnd,
-        numberOfPeople
+        numberOfPeople,
+        username 
     };
 
     const options = makeOptionsToken('POST', reservationData);
